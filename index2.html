@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SafeRoute</title>
+
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+
+<nav>
+    <button onclick="toggleNightMode()"> Night Mode</button>
+
+    <h1>SafeRoute</h1>
+    <button class="sos-btn" onclick="activateSOS()">🚨 SOS</button>
+</nav>
+
+<div class="container">
+    <div class="card">
+        <h2>Start Route</h2>
+
+        <input id="name" placeholder="Your Name">
+        <input id="start" placeholder="Start Location">
+        <input id="end" placeholder="Destination">
+        <input id="emergencyContact" placeholder="Emergency Contact">
+        <label style="display:flex; align-items:center; gap:10px; margin:10px 0;">
+    <input type="checkbox" id="womenSafety">
+    Enable Women Safety Mode
+</label>
+
+
+        <button onclick="startRoute()">Start Route</button>
+    </div>
+
+    <div class="card status-card">
+        <p id="traffic">Traffic: </p>
+        <p id="construction">Construction: </p>
+        <p id="safety"> Safety: </p>
+    </div>
+</div>
+
+<div id="map"></div>
+
+<div id="sosModal">
+    <h2>🚨 EMERGENCY</h2>
+    <p>Sharing live location...</p>
+</div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="script2.js"></script>
+
+</body>
+</html>

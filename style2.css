@@ -1,0 +1,173 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: radial-gradient(circle, #0a1a2f, #020b1c);
+    color: white;
+    min-height: 100vh;
+}
+
+/* NAVBAR */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 24px 40px;
+    background: rgba(20, 40, 80, 0.35);
+    backdrop-filter: blur(12px);
+}
+
+nav h1 {
+    color: #4dd7ff;
+    font-size: 26px;
+}
+
+/* SOS */
+.sos-btn {
+    background: #e63946;
+    border: none;
+    padding: 14px 26px;
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+    border-radius: 30px;
+    animation: pulse 1.5s infinite;
+}
+
+/* MAIN */
+.container {
+    display: flex;
+    gap: 40px;
+    padding: 40px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+/* GLASS PANELS */
+.card {
+    background: rgba(30, 60, 110, 0.35);
+    backdrop-filter: blur(18px);
+    color: white;
+    padding: 50px;
+    border-radius: 28px;
+    width: 45%;
+    min-height: 75vh;
+    box-shadow: 0 0 50px rgba(0, 180, 255, 0.25);
+}
+
+/* HEADINGS */
+.card h2 {
+    margin-bottom: 30px;
+    color: #4dd7ff;
+    font-size: 28px;
+}
+
+/* INPUTS */
+.card input {
+    width: 100%;
+    padding: 18px;
+    margin-bottom: 22px;
+    border-radius: 14px;
+    border: none;
+    outline: none;
+    background: rgba(255,255,255,0.9);
+    font-size: 17px;
+    color: #0a1a2f;
+}
+
+/* BUTTON */
+.card button {
+    width: 100%;
+    padding: 18px;
+    border: none;
+    border-radius: 16px;
+    background: linear-gradient(45deg, #4dd7ff, #1b9aaa);
+    color: #02111b;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* STATUS TEXT */
+.status-card p {
+    margin: 22px 0;
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+/* MAP */
+#map {
+    height: 520px;
+    width: calc(100% - 80px);
+    margin: 30px auto;
+    border-radius: 26px;
+    box-shadow: 0 0 40px rgba(77, 215, 255, 0.35);
+}
+
+/* SOS MODAL */
+#sosModal {
+    position: fixed;
+    inset: 0;
+    background: rgba(230, 57, 70, 0.95);
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+/* ANIMATION */
+@keyframes pulse {
+    0% { box-shadow: 0 0 6px #e63946; }
+    50% { box-shadow: 0 0 30px #e63946; }
+    100% { box-shadow: 0 0 6px #e63946; }
+}
+/* NIGHT MODE – SAME COLOR FAMILY */
+body.night {
+    background: radial-gradient(circle, #0b1d3a, #020617);
+    color: #e0f2ff;
+}
+
+body.night nav {
+    background: rgba(10, 25, 60, 0.85);
+}
+
+body.night .card {
+    background: rgba(15, 30, 70, 0.85);
+    box-shadow: 0 0 35px rgba(0, 212, 255, 0.35);
+}
+
+body.night #map {
+    filter: brightness(0.85) contrast(1.15) saturate(1.2);
+}
+/* Night Mode Button Fix */
+nav button,
+.night-toggle {
+    background: linear-gradient(135deg, #1e3a8a, #2563eb);
+    color: #ffffff;
+    border: none;
+    padding: 12px 22px;
+    border-radius: 25px;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(37, 99, 235, 0.6);
+    transition: all 0.3s ease;
+}
+
+nav button:hover,
+.night-toggle:hover {
+    background: linear-gradient(135deg, #2563eb, #1e40af);
+    box-shadow: 0 0 25px rgba(59, 130, 246, 0.9);
+    transform: scale(1.05);
+}
+
+/* Night mode active button */
+body.night nav button,
+body.night .night-toggle {
+    background: linear-gradient(135deg, #0ea5e9, #2563eb);
+    box-shadow: 0 0 30px rgba(14, 165, 233, 0.9);
+}
